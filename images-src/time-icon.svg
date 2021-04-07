@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48"
+   height="48"
+   viewBox="0 0 12.7 12.7"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="time-icon.svg"
+   inkscape:export-filename="/home/rodrigo/projects/Tools/timestamp-tools-extension/images/time-icon.png"
+   inkscape:export-xdpi="101.0176"
+   inkscape:export-ydpi="101.0176">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="11.2"
+     inkscape:cx="5.9492268"
+     inkscape:cy="24.619269"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="849"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid27"
+       dotted="false"
+       empspacing="8"
+       snapvisiblegridlinesonly="false"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-284.29998)">
+    <g
+       id="g15"
+       transform="translate(-0.00449153,0.16107667)">
+      <circle
+         r="1.8792388"
+         cy="294.90359"
+         cx="2.1298039"
+         id="path10"
+         style="fill:#ffffff;stroke:#000080;stroke-width:0.26458332" />
+      <circle
+         r="0.13363476"
+         cy="294.90359"
+         cx="2.1298039"
+         id="path31"
+         style="fill:#ffffff;stroke:#000080;stroke-width:0.26458332" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path33"
+         d="m 2.129804,294.90359 v -1.62032"
+         style="fill:#0000ff;stroke:#000080;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path35"
+         d="m 2.129804,294.90359 0.7851042,0.87698"
+         style="fill:none;stroke:#000080;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g25"
+       transform="matrix(2.0327007,0,0,2.0327007,4.1290326,-310.84799)"
+       inkscape:export-filename="/home/rodrigo/projects/Tools/timestamp-tools-extension/images/time-icon-32.png"
+       inkscape:export-xdpi="99.392509"
+       inkscape:export-ydpi="99.392509">
+      <circle
+         style="fill:#ffffff;stroke:#000080;stroke-width:0.26458332"
+         id="circle17"
+         cx="2.1298039"
+         cy="294.90359"
+         r="1.8792388" />
+      <circle
+         style="fill:#ffffff;stroke:#000080;stroke-width:0.26458332"
+         id="circle19"
+         cx="2.1298039"
+         cy="294.90359"
+         r="0.13363476" />
+      <path
+         style="fill:#0000ff;stroke:#000080;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 2.129804,294.90359 v -1.62032"
+         id="path21"
+         inkscape:connector-curvature="0" />
+      <path
+         style="fill:none;stroke:#000080;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 2.129804,294.90359 0.7851042,0.87698"
+         id="path23"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

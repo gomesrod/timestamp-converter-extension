@@ -1,0 +1,28 @@
+<style>
+    #timestamp-tools-extension_converter-main-panel {
+        width: 300px;
+        height: 300px;
+        background: #eeeeee;
+        border: 1px solid #cccccc;
+    }
+    #timestamp-tools-extension_converter-main-panel h1 {
+        background: #e0e0f6;
+    }
+    #timestamp-tools-extension_converter-input-val {
+
+    }
+</style>
+
+<!--Only called in standalone development, not during actual insertion-->
+<script src="converter_panel.js"></script>
+
+<div id="timestamp-tools-extension_converter-main-panel">
+    <h1>Converter! <a onclick="timestamp_tools_extension_converter.close()">X</a> </h1>
+    <input type="hidden" id="timestamp-tools-extension_converter-input-receiver" onchange="timestamp_tools_extension_converter.setInput(this.value)" />
+    <p>
+        Raw: <span id="timestamp-tools-extension_converter-input-val"></span>
+    </p>
+    <p>
+        Converted: <span id="timestamp-tools-extension_converter-output-val"></span>
+    </p>
+</div>
