@@ -7,18 +7,14 @@
     <p style="color: #FF0000">
         <strong>Sandbox for local UI testing without deployment</strong>
         <br />
-        This page loads the actual components for a more simple workflow during UI development
-        <br />
-        It uses some unsafe methods* to mix the contents of the pages , you may need to run the browser with additional options
-        <span style="background: #eeeeee">google-chrome --disable-web-security --user-data-dir=/tmp/unsafe-chrome-instance</span>
-
-        <br />
-        <i>* More specifically, the page uses iframe as workaround to have one page get the html contents of the other</i>
+        (See README.md if the converter is not loading properly)
     </p>
 
     <h1>HTML Ipsum Presents</h1>
 
-    <h1>This is a sample timestamp: <a href="#" onclick="timestamp_tools_extension_converter.setInput('1617833323465')">1617833323465</a> . Some of them are displayed along the page</h1>
+    <h1>This is a sample timestamp, click to simulate the selection menu from the extension: <a href="#" onclick="timestamp_tools_extension_converter.setInput('1617833323465')">1617833323465</a> . Some other example timestamps are displayed along the page</h1>
+
+    <h2>Also, an example of <a href="#" onclick="timestamp_tools_extension_converter.setInput('Abcdefghijklmno')">invalid timestamp input</a></h2>
 
     <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 
@@ -46,7 +42,7 @@
 }
 </code></pre>
 
-    <h1>This is another timestamp: <a href="#" onclick="timestamp_tools_extension_converter.setInput('1617822223999')">1617822223999</a></h1>
+    <h1>This is another timestamp: <a href="#" onclick="timestamp_tools_extension_converter.setInput('1617822223')">1617822223</a></h1>
 
     <ul>
         <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
@@ -89,7 +85,6 @@
 
         setTimeout(() => {
             const pageContents = document.getElementById("temp_frame").contentWindow.document.documentElement.outerHTML
-            console.log("PAGE", pageContents)
             iframe.remove()
 
             /*
@@ -97,10 +92,12 @@
                 Make sure they are in sync
              */
             const container = document.createElement("div")
+            container.id = "timestamp-tools-extension_converter_container"
             container.style.width = "300px"
-            container.style.height = "300px"
+            container.style.height = "205px"
             container.style.position = "fixed"
             container.style.bottom = "0"
+            container.style.zIndex = "999"
             container.innerHTML = pageContents
             document.body.append(container)
         }, 300)

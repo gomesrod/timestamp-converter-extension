@@ -1,28 +1,168 @@
 <style>
+    #timestamp-tools-extension_converter-main-panel * {
+        font-family: Helvetica, Arial, Lucida, sans-serif;
+        font-size: 14px;
+    }
+
     #timestamp-tools-extension_converter-main-panel {
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        height: 100%;
         background: #eeeeee;
-        border: 1px solid #cccccc;
+        border: 2px solid #cccccc;
+        overflow-y: hidden;
+    }
+    #timestamp-tools-extension_converter-title-bar {
+        display: flex;
+
+        background-color: #888888;
+        padding: 3px;
+        vertical-align: bottom;
+    }
+    #timestamp-tools-extension_converter-title-bar span {
+        color: #f9f9f9;
+        font-weight: bold;
+        flex-grow: 1;
+    }
+    #timestamp-tools-extension_converter-title-bar button {
+        border: 1px solid #666666;
+        border-radius: 5px;
+        width: 25px;
+    }
+
+    #timestamp-tools-extension_converter-main-panel a {
+        color: #3141FF;
+        text-decoration: none;
     }
     #timestamp-tools-extension_converter-main-panel h1 {
         background: #e0e0f6;
     }
-    #timestamp-tools-extension_converter-input-val {
 
+    #timestamp-tools-extension_converter-input-area {
+        margin: 7px
     }
+    #timestamp-tools-extension_converter-input-val {
+        font-size: 16px;
+        width: 250px;
+    }
+
+    #timestamp-tools-extension_converter-options {
+        margin: 5px;
+        padding: 5px;
+        background: #cccccc;
+        border: 1px solid #cccccc;
+    }
+    #timestamp-tools-extension_converter-options legend {
+        font-size: 10px;
+    }
+    #timestamp-tools-extension_converter-options label {
+        font-size: 10px;
+    }
+    #timestamp-tools-extension_converter-options fieldset {
+        float: right;
+    }
+    #timestamp-tools-extension_converter-options .position-icon {
+        fill: #f2f2f2;
+    }
+    #timestamp-tools-extension_converter-options .position-icon:hover {
+        fill: #000080;
+    }
+
+    #timestamp-tools-extension_converter-output-area {
+        margin: 7px;
+        border-top: 1px solid #cccccc;
+    }
+
+    #timestamp-tools-extension_converter-output-area label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    #timestamp-tools-extension_converter-error-area {
+        margin: 3px;
+        color: #ff0000;
+        border: 1px solid #ff0000;
+    }
+
 </style>
 
-<!--Only called in standalone development, not during actual insertion-->
-<script src="converter_panel.js"></script>
-
 <div id="timestamp-tools-extension_converter-main-panel">
-    <h1>Converter! <a onclick="timestamp_tools_extension_converter.close()">X</a> </h1>
-    <input type="hidden" id="timestamp-tools-extension_converter-input-receiver" onchange="timestamp_tools_extension_converter.setInput(this.value)" />
-    <p>
-        Raw: <span id="timestamp-tools-extension_converter-input-val"></span>
-    </p>
-    <p>
-        Converted: <span id="timestamp-tools-extension_converter-output-val"></span>
+    <div id="timestamp-tools-extension_converter-title-bar">
+        <span>Timestamp converter</span>
+        <button onclick="timestamp_tools_extension_converter.toggleOptionsPanel()" title="Options">...</button>
+        <button onclick="timestamp_tools_extension_converter.close()" title="Close">X</button>
+    </div>
+    <div id="timestamp-tools-extension_converter-options" style="display: none">
+        <fieldset>
+            <legend>Input precision</legend>
+            <input type="radio" id="timestamp-tools-extension_converter-opts-precisionMillis"
+                   name="timestamp-tools-extension_converter-opts-precision" value="millis" />
+            <label for="timestamp-tools-extension_converter-opts-precisionMillis">Millis</label>
+
+            <input type="radio" id="timestamp-tools-extension_converter-opts-precisionSeconds"
+                   name="timestamp-tools-extension_converter-opts-precision" value="seconds" />
+            <label for="timestamp-tools-extension_converter-opts-precisionSeconds">Seconds</label>
+
+            <input type="radio" id="timestamp-tools-extension_converter-opts-precisionAuto"
+                   name="timestamp-tools-extension_converter-opts-precision" value="auto" checked="checked" />
+            <label for="timestamp-tools-extension_converter-opts-precisionAuto">Auto</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Position</legend>
+            <svg width="28.768" height="26.357" version="1.1" viewBox="0 0 7.6114953 6.9736607" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <metadata>
+                    <rdf:RDF>
+                        <cc:Work rdf:about="">
+                            <dc:format>image/svg+xml</dc:format>
+                            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                            <dc:title/>
+                        </cc:Work>
+                    </rdf:RDF>
+                </metadata>
+                <g transform="translate(.014174 -290.04)" stroke="#000080">
+                    <rect x=".11245" y="290.17" width="7.3582" height="6.7204" rx=".52998" ry=".48404" fill="#f2f2f2" stroke-width=".25325"/>
+
+                    <a href="#" onclick="timestamp_tools_extension_converter.setWindowPosition('UpLeft')">
+                    <rect id="timestamp-tools-extension_converter_setPosition_ul"
+                           x=".60491" y="290.59" width="2.9479" height="2.6172" rx=".26626" ry=".22723" class="position-icon" stroke-width=".24597"/>
+                    </a>
+                    <a href="#" onclick="timestamp_tools_extension_converter.setWindowPosition('UpRight')">
+                    <rect id="timestamp-tools-extension_converter_setPosition_ur"
+                          x="4.0298" y="290.61" width="2.9489" height="2.5946" rx=".26636" ry=".22527" class="position-icon" stroke-width=".24495"/>
+                    </a>
+                    <a href="#" onclick="timestamp_tools_extension_converter.setWindowPosition('DownLeft')">
+                    <rect id="timestamp-tools-extension_converter_setPosition_dl"
+                          x=".60491" y="293.78" width="2.9479" height="2.6172" rx=".26626" ry=".22723" class="position-icon" stroke-width=".24597"/>
+                    </a>
+                    <a href="#" onclick="timestamp_tools_extension_converter.setWindowPosition('DownRight')">
+                    <rect id="timestamp-tools-extension_converter_setPosition_dr"
+                          x="4.0303" y="293.78" width="2.9479" height="2.6172" rx=".26626" ry=".22723" class="position-icon" stroke-width=".24597"/>
+                    </a>
+                </g>
+            </svg>
+        </fieldset>
+        <div style="clear: both"></div>
+    </div>
+
+    <div id="timestamp-tools-extension_converter-input-area">
+        <input type="text" id="timestamp-tools-extension_converter-input-val"
+               onchange="timestamp_tools_extension_converter.setInput(this.value)"
+               onkeyup="timestamp_tools_extension_converter.setInput(this.value)" />
+
+        <a href="#" onclick="timestamp_tools_extension_converter.setInputToNow()" title="Set to current time">now</a>
+    </div>
+
+    <div id="timestamp-tools-extension_converter-output-area" style="display: none">
+        <label id="timestamp-tools-extension_converter-output-parsedIn"></label>
+
+        <label>Local time:</label>
+        <span id="timestamp-tools-extension_converter-output-local-time"></span>
+
+        <label>UTC time:</label>
+        <span id="timestamp-tools-extension_converter-output-utc-time"></span>
+    </div>
+
+    <p id="timestamp-tools-extension_converter-error-area" style="display: none">
+        The selected text is not a valid timestamp
     </p>
 </div>

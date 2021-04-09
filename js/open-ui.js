@@ -9,10 +9,12 @@ if (document.getElementById("timestamp-tools-extension_converter-main-panel")) {
         .then(response => response.text())
         .then(pageContents => {
             const container = document.createElement("div")
+            container.id = "timestamp-tools-extension_converter_container"
             container.style.width = "300px"
-            container.style.height = "300px"
+            container.style.height = "205px"
             container.style.position = "fixed"
-            container.style.bottom = 0
+            container.style.bottom = "0"
+            container.style.zIndex = "999"
             container.innerHTML = pageContents
             document.body.append(container)
 
